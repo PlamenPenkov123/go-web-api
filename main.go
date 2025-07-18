@@ -20,6 +20,8 @@ func main() {
 	router := gin.Default()
 	router.Use(cors.New(cors.Config{
 		AllowOrigins: []string{"http://localhost:3000"},
+		AllowMethods: []string{"*"},
+		AllowHeaders: []string{"*"},
 	}))
 
 	router.GET("/ping", func(c *gin.Context) {
